@@ -3,11 +3,11 @@ package Server
 import (
 	"encoding/json"
 	"fmt"
+	"io"
 	"nat/Constant"
 	"nat/Logger"
 	"nat/Util"
 	"net"
-	"strconv"
 	"time"
 )
 
@@ -23,8 +23,12 @@ const HeaderLength = ReqLength + BodyLength
 // 包头标识包体长度的起始位置
 const BodyOffset = 1
 
+const Server4Net = "127.0.0.1:9502"
+
+const Server4Local = "127.0.0.1:9501"
+
 type Server struct {
-	Nodes map[string]*Node
+	Node *Node
 }
 
 type Node struct {
@@ -36,31 +40,32 @@ type Node struct {
 
 func NewServer() *Server {
 	return &Server{
-		Nodes: make(map[string]*Node),
+
 	}
 }
 
 // 外部服务监听端口
-func (s *Server) server4Net() {
-	tcpAddr, err := net.ResolveTCPAddr("tcp4", "127.0.0.1:9501")
+func (s *Server) server4Local() {
+	tcpAddr, err := net.ResolveTCPAddr("tcp4", Server4Local)
 	if err != nil {
 		Logger.Logger.Println("resolve address error：" + err.Error())
 		return
 	}
-	Logger.Logger.Println("server4Net start success")
+	Logger.Logger.Println("server4Local start success")
 	listener, err := net.ListenTCP("tcp", tcpAddr)
 	if err != nil {
-		Logger.Logger.Println("server4Net listen error：" + err.Error())
+		Logger.Logger.Println("server4Local listen error：" + err.Error())
 		return
 	}
 	for {
 		connect, err := listener.Accept()
 		if err != nil {
-			Logger.Logger.Println("server4Net accept error：" + err.Error())
+			Logger.Logger.Println("server4Local accept error：" + err.Error())
 			return
 		}
 		// 客户端
-		connector := &Node{
+		Logger.Logger.Println("new connect：" + connect.RemoteAddr().String())
+		s.Node = &Node{
 			createdAt:    time.Now().Unix(),
 			lastActiveAt: time.Now().Unix(),
 			connector:    connect,
@@ -74,30 +79,44 @@ func (s *Server) server4Net() {
 				Connector:  connect,
 			},
 		}
-		Logger.Logger.Println("new connect：" + connect.RemoteAddr().String() + " nodes：" + strconv.Itoa(len(s.Nodes)))
-		s.Nodes[connect.RemoteAddr().String()] = connector
-		go s.handleNode(connector)
+		go s.handleLocalNode(s.Node)
 	}
 }
 
 // 客户端服务监听端口
-func (s *Server) server4Local() {
-
+func (s *Server) server4Net() {
+	tcpAddr, err := net.ResolveTCPAddr("tcp4", Server4Net)
+	if err != nil {
+		Logger.Logger.Println("resolve address error：" + err.Error())
+		return
+	}
+	listener, err := net.ListenTCP("tcp", tcpAddr)
+	if err != nil {
+		Logger.Logger.Println("server4Net listen error：" + err.Error())
+		return
+	}
+	Logger.Logger.Println("server4Net start success")
+	for {
+		connect, err := listener.Accept()
+		if err != nil {
+			Logger.Logger.Println("server4Net accept error：" + err.Error())
+			return
+		}
+		go s.handleNetNode(connect)
+	}
 }
 
 // 监听外部服务
 func (s *Server) Lister() {
-	s.server4Net()
+	go s.server4Net()
+	time.Sleep(time.Second * 2)
+	go s.server4Local()
 }
 
 // 处理客户端
-func (s *Server) handleNode(node *Node) {
+func (s *Server) handleLocalNode(node *Node) {
 	defer func() {
 		node.connector.Close()
-		key := node.connector.RemoteAddr().String()
-		if _, ok := s.Nodes[key]; ok {
-			delete(s.Nodes, key)
-		}
 	}()
 	// 读取数据
 	node.reader.Buff = make([]byte, node.reader.BuffLen)
@@ -113,6 +132,26 @@ func (s *Server) handleNode(node *Node) {
 			node.service(data)
 		}
 	}
+}
+
+func (s *Server) handleNetNode(client net.Conn) {
+	defer client.Close()
+	buff := make([]byte, 1024)
+	connect, err := net.Dial("tcp", Server4Local)
+	if err != nil {
+		Logger.Logger.Println(err.Error())
+		return
+	}
+	// 转接到本地9501端口
+	_, err = io.Copy(connect, client)
+	if err != nil {
+		fmt.Println(err.Error())
+		return
+	}
+	// 读取返回
+	result, _ := connect.Read(buff[0:])
+	fmt.Println("back：" + string(result))
+	connect.Close()
 }
 
 func (n *Node) service(data []byte) {
@@ -134,7 +173,8 @@ func (n *Node) service(data []byte) {
 		fmt.Println(username, password)
 		_, _ = n.connector.Write([]byte("login success"))
 	case Constant.NodeList:
-
 		_, _ = n.connector.Write([]byte("select success"))
+	case Constant.Transport:
+		// 转发到局域网的连接
 	}
 }

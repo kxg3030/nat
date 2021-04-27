@@ -178,3 +178,78 @@
 2021/04/27 15:32:10 new connect：127.0.0.1:53361 nodes：0
 2021/04/27 15:32:10 connect server success
 2021/04/27 15:32:10 client closed：EOF
+2021/04/27 16:33:39 server4Net start success
+2021/04/27 16:36:54 server4Net start success
+2021/04/27 16:37:38 dial tcp 127.0.0.1:9501: connectex: No connection could be made because the target machine actively refused it.
+2021/04/27 16:37:44 server4Net start success
+2021/04/27 16:39:50 server4Local start success
+2021/04/27 16:39:50 server4Net start success
+2021/04/27 17:17:01 server4Net start success
+2021/04/27 17:17:02 server4Local start success at：
+2021/04/27 17:17:19 server4Net start success
+2021/04/27 17:17:21 server4Local start success
+2021/04/27 17:17:40 new connect：127.0.0.1:55857
+2021/04/27 17:17:40 connect server success
+2021/04/27 17:17:51 read data error：read tcp 127.0.0.1:9502->127.0.0.1:55857: wsarecv: An existing connection was forcibly closed by the remote host.
+2021/04/27 17:19:51 server4Net start success
+2021/04/27 17:19:52 server4Local start success
+2021/04/27 17:19:56 connect server success
+2021/04/27 17:19:56 bridge is nil
+2021/04/27 17:20:05 connect server success
+2021/04/27 17:20:05 bridge is nil
+2021/04/27 17:21:18 connect server success
+2021/04/27 17:21:18 bridge is nil
+2021/04/27 17:21:23 connect server success
+2021/04/27 17:21:24 bridge is nil
+2021/04/27 17:21:46 new connect：127.0.0.1:55914
+2021/04/27 17:21:46 connect server success
+2021/04/27 17:21:56 connect server success
+2021/04/27 17:22:46 read data error：read tcp 127.0.0.1:9501->127.0.0.1:55914: i/o timeout
+2021/04/27 17:23:08 new connect：127.0.0.1:49579
+2021/04/27 17:23:08 connect server success
+2021/04/27 17:23:09 read data error：read tcp 127.0.0.1:9501->127.0.0.1:49579: wsarecv: An existing connection was forcibly closed by the remote host.
+2021/04/27 17:23:19 server4Net start success
+2021/04/27 17:23:19 server4Local start success
+2021/04/27 17:23:25 new connect：127.0.0.1:49880
+2021/04/27 17:23:25 connect server success
+2021/04/27 17:23:27 connect server success
+2021/04/27 17:23:27 new connect：127.0.0.1:49882
+2021/04/27 17:24:53 server4Net start success
+2021/04/27 17:24:55 server4Local start success
+2021/04/27 17:24:58 connect server success
+2021/04/27 17:24:58 new connect：127.0.0.1:49903
+2021/04/27 17:25:45 server4Net start success
+2021/04/27 17:25:47 server4Local start success
+2021/04/27 17:25:50 connect server success
+2021/04/27 17:25:50 new connect：127.0.0.1:49921
+2021/04/27 17:26:50 read data error：read tcp 127.0.0.1:9501->127.0.0.1:49921: i/o timeout
+2021/04/27 17:31:42 server4Net start success
+2021/04/27 17:31:44 server4Local start success
+2021/04/27 17:31:48 new connect：127.0.0.1:50096
+2021/04/27 17:31:48 connect server success
+2021/04/27 17:33:05 server4Net start success
+2021/04/27 17:33:06 server4Local start success
+2021/04/27 17:33:14 new connect：127.0.0.1:50132
+2021/04/27 17:33:14 connect server success
+2021/04/27 17:34:15 server4Net start success
+2021/04/27 17:34:17 server4Local start success
+2021/04/27 17:34:19 new connect：127.0.0.1:50149
+2021/04/27 17:34:19 connect server success
+2021/04/27 17:34:39 server4Net start success
+2021/04/27 17:34:40 connect server success
+2021/04/27 17:34:40 server4Local start success
+2021/04/27 17:34:41 new connect：127.0.0.1:50155
+2021/04/27 17:34:58 server4Net start success
+2021/04/27 17:35:00 connect server success
+2021/04/27 17:35:00 server4Local start success
+2021/04/27 17:35:00 new connect：127.0.0.1:50159
+2021/04/27 17:36:06 server4Net start success
+2021/04/27 17:36:08 server4Local start success
+2021/04/27 17:40:16 server4Net start success
+2021/04/27 17:40:18 server4Local start success
+2021/04/27 17:40:26 new connect：127.0.0.1:50449
+2021/04/27 17:40:26 connect server success
+2021/04/27 17:41:13 server4Net start success
+2021/04/27 17:41:15 connect server success
+2021/04/27 17:41:15 server4Local start success
+2021/04/27 17:41:15 new connect：127.0.0.1:50458
