@@ -2,9 +2,12 @@ package Util
 
 import (
 	"encoding/binary"
-	"errors"
+	"fmt"
+	"io"
 	"nat/Logger"
 	"net"
+	"strconv"
+	"time"
 )
 
 type Reader struct {
@@ -18,27 +21,36 @@ type Reader struct {
 	Connector  net.Conn
 }
 
-func (r *Reader) Read() error {
+func (r *Reader) Read() {
+	defer close(r.Content)
 	for {
 		r.moveOffset()
 		if r.End >= r.BuffLen {
 			Logger.Logger.Println("data is too long")
-			close(r.Content)
-			return errors.New("data is too long")
+			return
 		}
 		// 读取数据到缓冲区(1kb)
+		_ = r.Connector.SetReadDeadline(time.Now().Add(time.Second * 60))
 		length, err := r.Connector.Read(r.Buff[r.End:])
 		if err != nil {
-			Logger.Logger.Println("read data error：" + err.Error())
-			close(r.Content)
-			return err
+			if err == io.EOF {
+				Logger.Logger.Println("client closed：" + err.Error())
+				return
+			}
+			if err, ok := err.(net.Error); ok {
+				Logger.Logger.Println("read data error：" + err.Error())
+			}
+			return
 		}
+		_ = r.Connector.SetReadDeadline(time.Time{})
 		// 缓冲区下次填充的位置后移
 		r.End += length
 		// 切割完整数据
 		r.readOneMessage()
 	}
 }
+
+// 从缓冲区组合完整的数据
 func (r *Reader) readOneMessage() {
 	// 检查缓冲区数据是否完整
 	if r.End-r.Start < r.HeaderLen {
@@ -48,7 +60,8 @@ func (r *Reader) readOneMessage() {
 	// 读取包头部
 	headerData := r.Buff[r.Start : r.HeaderLen+r.Start]
 	// 读取包头中包体长度
-	bodyLength := binary.BigEndian.Uint16(headerData[r.BodyOffset : r.BodyOffset+2])
+	bodyLength := binary.BigEndian.Uint32(headerData[r.BodyOffset : r.BodyOffset+4])
+	fmt.Println("包长：" + strconv.Itoa(int(bodyLength)))
 	// 判断包体的长度
 	if r.End-r.Start-r.HeaderLen < int(bodyLength) {
 		// 包体不足
@@ -61,6 +74,7 @@ func (r *Reader) readOneMessage() {
 	r.readOneMessage()
 }
 
+// 移动
 func (r *Reader) moveOffset() {
 	if r.Start == 0 {
 		return

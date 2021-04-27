@@ -2,12 +2,25 @@ package Server
 
 import (
 	"fmt"
+	"nat/Constant"
 	"nat/Logger"
 	"nat/Util"
 	"net"
 	"strconv"
 	"time"
 )
+
+// 请求标识
+const ReqLength = 1
+
+// 包体长度字节
+const BodyLength = 4
+
+// 包头长度
+const HeaderLength = ReqLength + BodyLength
+
+// 包头标识包体长度的起始位置
+const BodyOffset = 1
 
 type Server struct {
 	Nodes map[string]*Node
@@ -54,8 +67,8 @@ func (s *Server) server4Net() {
 				Start:      0,
 				End:        0,
 				BuffLen:    1024,
-				HeaderLen:  4,
-				BodyOffset: 2,
+				HeaderLen:  HeaderLength,
+				BodyOffset: BodyOffset,
 				Content:    make(chan []byte, 10),
 				Connector:  connect,
 			},
@@ -96,8 +109,16 @@ func (s *Server) handleNode(node *Node) {
 				fmt.Println("client quit")
 				return
 			}
-			fmt.Println(data)
-			_, _ = node.connector.Write([]byte("hello"))
+			node.service(data)
 		}
+	}
+}
+
+func (n *Node) service(data []byte) {
+	action := data[0]
+	switch action {
+	case Constant.Login:
+		fmt.Println("登录")
+		_, _ = n.connector.Write([]byte("login success"))
 	}
 }

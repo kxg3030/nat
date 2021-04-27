@@ -25,3 +25,137 @@
 2021/04/27 14:29:33 new connect：127.0.0.1:52750 nodes：0
 2021/04/27 14:29:33 connect server success
 2021/04/27 14:29:35 read data error：read tcp 127.0.0.1:9501->127.0.0.1:52750: wsarecv: An existing connection was forcibly closed by the remote host.
+2021/04/27 14:37:46 server4Net start success
+2021/04/27 14:37:48 new connect：127.0.0.1:52902 nodes：0
+2021/04/27 14:37:48 connect server success
+2021/04/27 14:37:50 read data error：read tcp 127.0.0.1:9501->127.0.0.1:52902: wsarecv: An existing connection was forcibly closed by the remote host.
+2021/04/27 14:43:37 server4Net start success
+2021/04/27 14:43:39 new connect：127.0.0.1:52957 nodes：0
+2021/04/27 14:43:39 connect server success
+2021/04/27 14:44:21 server4Net start success
+2021/04/27 14:44:25 new connect：127.0.0.1:52959 nodes：0
+2021/04/27 14:44:25 connect server success
+2021/04/27 14:44:34 read data error：read tcp 127.0.0.1:9501->127.0.0.1:52959: wsarecv: An existing connection was forcibly closed by the remote host.
+2021/04/27 14:44:38 new connect：127.0.0.1:52961 nodes：0
+2021/04/27 14:44:38 connect server success
+2021/04/27 14:44:41 read data error：read tcp 127.0.0.1:9501->127.0.0.1:52961: wsarecv: An existing connection was forcibly closed by the remote host.
+2021/04/27 14:45:25 server4Net start success
+2021/04/27 14:45:27 new connect：127.0.0.1:52966 nodes：0
+2021/04/27 14:45:27 connect server success
+2021/04/27 14:45:33 read data error：read tcp 127.0.0.1:9501->127.0.0.1:52966: wsarecv: An existing connection was forcibly closed by the remote host.
+2021/04/27 14:45:42 server4Net start success
+2021/04/27 14:45:43 new connect：127.0.0.1:52969 nodes：0
+2021/04/27 14:45:43 connect server success
+2021/04/27 14:45:46 read data error：read tcp 127.0.0.1:9501->127.0.0.1:52969: wsarecv: An existing connection was forcibly closed by the remote host.
+2021/04/27 14:49:49 server4Net start success
+2021/04/27 14:49:51 new connect：127.0.0.1:52989 nodes：0
+2021/04/27 14:49:51 connect server success
+2021/04/27 14:49:56 read data error：read tcp 127.0.0.1:9501->127.0.0.1:52989: wsarecv: An existing connection was forcibly closed by the remote host.
+2021/04/27 14:50:07 server4Net start success
+2021/04/27 14:50:10 new connect：127.0.0.1:52991 nodes：0
+2021/04/27 14:50:10 connect server success
+2021/04/27 14:52:52 server4Net start success
+2021/04/27 14:53:01 server4Net start success
+2021/04/27 14:53:05 new connect：127.0.0.1:53021 nodes：0
+2021/04/27 14:53:05 connect server success
+2021/04/27 14:53:05 read data error：EOF
+2021/04/27 15:03:30 server4Net start success
+2021/04/27 15:03:32 new connect：127.0.0.1:53094 nodes：0
+2021/04/27 15:03:32 connect server success
+2021/04/27 15:03:32 client closed：EOF
+2021/04/27 15:04:16 server4Net start success
+2021/04/27 15:04:19 new connect：127.0.0.1:53096 nodes：0
+2021/04/27 15:04:19 connect server success
+2021/04/27 15:04:19 client closed：EOF
+2021/04/27 15:04:31 new connect：127.0.0.1:53097 nodes：0
+2021/04/27 15:04:31 connect server success
+2021/04/27 15:04:31 client closed：EOF
+2021/04/27 15:16:03 server4Net start success
+2021/04/27 15:16:06 new connect：127.0.0.1:53178 nodes：0
+2021/04/27 15:16:06 connect server success
+2021/04/27 15:16:10 read data error：read tcp 127.0.0.1:9501->127.0.0.1:53178: wsarecv: An existing connection was forcibly closed by the remote host.
+2021/04/27 15:16:48 server4Net start success
+2021/04/27 15:17:04 new connect：127.0.0.1:53182 nodes：0
+2021/04/27 15:17:04 connect server success
+2021/04/27 15:17:04 client closed：EOF
+2021/04/27 15:17:09 new connect：127.0.0.1:53183 nodes：0
+2021/04/27 15:17:09 connect server success
+2021/04/27 15:17:09 client closed：EOF
+2021/04/27 15:17:11 new connect：127.0.0.1:53184 nodes：0
+2021/04/27 15:17:11 connect server success
+2021/04/27 15:17:11 client closed：EOF
+2021/04/27 15:17:13 new connect：127.0.0.1:53185 nodes：0
+2021/04/27 15:17:13 connect server success
+2021/04/27 15:17:13 client closed：EOF
+2021/04/27 15:17:14 new connect：127.0.0.1:53186 nodes：0
+2021/04/27 15:17:14 connect server success
+2021/04/27 15:17:14 client closed：EOF
+2021/04/27 15:17:15 new connect：127.0.0.1:53187 nodes：0
+2021/04/27 15:17:15 connect server success
+2021/04/27 15:17:15 client closed：EOF
+2021/04/27 15:17:17 new connect：127.0.0.1:53188 nodes：0
+2021/04/27 15:17:17 connect server success
+2021/04/27 15:17:17 client closed：EOF
+2021/04/27 15:17:18 new connect：127.0.0.1:53189 nodes：0
+2021/04/27 15:17:18 connect server success
+2021/04/27 15:17:18 client closed：EOF
+2021/04/27 15:17:19 new connect：127.0.0.1:53191 nodes：0
+2021/04/27 15:17:19 connect server success
+2021/04/27 15:17:19 client closed：EOF
+2021/04/27 15:17:20 new connect：127.0.0.1:53195 nodes：0
+2021/04/27 15:17:20 connect server success
+2021/04/27 15:17:20 client closed：EOF
+2021/04/27 15:17:23 new connect：127.0.0.1:53196 nodes：0
+2021/04/27 15:17:23 connect server success
+2021/04/27 15:17:23 client closed：EOF
+2021/04/27 15:17:24 new connect：127.0.0.1:53197 nodes：0
+2021/04/27 15:17:24 connect server success
+2021/04/27 15:17:24 client closed：EOF
+2021/04/27 15:17:26 new connect：127.0.0.1:53198 nodes：0
+2021/04/27 15:17:26 connect server success
+2021/04/27 15:17:26 client closed：EOF
+2021/04/27 15:17:29 new connect：127.0.0.1:53199 nodes：0
+2021/04/27 15:17:29 connect server success
+2021/04/27 15:17:29 client closed：EOF
+2021/04/27 15:17:30 new connect：127.0.0.1:53200 nodes：0
+2021/04/27 15:17:30 connect server success
+2021/04/27 15:17:30 client closed：EOF
+2021/04/27 15:17:31 new connect：127.0.0.1:53201 nodes：0
+2021/04/27 15:17:31 connect server success
+2021/04/27 15:17:31 client closed：EOF
+2021/04/27 15:17:33 new connect：127.0.0.1:53202 nodes：0
+2021/04/27 15:17:33 connect server success
+2021/04/27 15:17:33 client closed：EOF
+2021/04/27 15:17:34 new connect：127.0.0.1:53203 nodes：0
+2021/04/27 15:17:34 connect server success
+2021/04/27 15:17:34 client closed：EOF
+2021/04/27 15:17:35 new connect：127.0.0.1:53204 nodes：0
+2021/04/27 15:17:35 connect server success
+2021/04/27 15:17:35 client closed：EOF
+2021/04/27 15:17:36 new connect：127.0.0.1:53205 nodes：0
+2021/04/27 15:17:36 connect server success
+2021/04/27 15:17:36 client closed：EOF
+2021/04/27 15:17:37 new connect：127.0.0.1:53206 nodes：0
+2021/04/27 15:17:37 connect server success
+2021/04/27 15:17:37 client closed：EOF
+2021/04/27 15:17:38 new connect：127.0.0.1:53207 nodes：0
+2021/04/27 15:17:38 connect server success
+2021/04/27 15:17:38 client closed：EOF
+2021/04/27 15:17:39 new connect：127.0.0.1:53208 nodes：0
+2021/04/27 15:17:39 connect server success
+2021/04/27 15:17:39 client closed：EOF
+2021/04/27 15:17:40 new connect：127.0.0.1:53209 nodes：0
+2021/04/27 15:17:40 connect server success
+2021/04/27 15:17:40 client closed：EOF
+2021/04/27 15:17:41 new connect：127.0.0.1:53210 nodes：0
+2021/04/27 15:17:41 connect server success
+2021/04/27 15:17:41 client closed：EOF
+2021/04/27 15:17:42 new connect：127.0.0.1:53211 nodes：0
+2021/04/27 15:17:42 connect server success
+2021/04/27 15:17:42 client closed：EOF
+2021/04/27 15:17:43 new connect：127.0.0.1:53212 nodes：0
+2021/04/27 15:17:43 connect server success
+2021/04/27 15:17:43 client closed：EOF
+2021/04/27 15:17:44 new connect：127.0.0.1:53213 nodes：0
+2021/04/27 15:17:44 connect server success
+2021/04/27 15:17:44 client closed：EOF
