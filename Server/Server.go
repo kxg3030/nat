@@ -134,6 +134,7 @@ func (n *Node) service(data []byte) {
 		fmt.Println(username, password)
 		_, _ = n.connector.Write([]byte("login success"))
 	case Constant.NodeList:
+
 		_, _ = n.connector.Write([]byte("select success"))
 	}
 }

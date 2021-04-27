@@ -15,7 +15,7 @@ var once sync.Once
 func init() {
 	once.Do(func() {
 		if Logger == nil {
-			fd, err := os.OpenFile(Config.BASE_PATH+"/runtime.log", os.O_CREATE|os.O_APPEND, fs.ModePerm)
+			fd, err := os.OpenFile(Config.BasePath+"/runtime.log", os.O_CREATE|os.O_APPEND, fs.ModePerm)
 			if err != nil {
 				log.Fatal(err.Error())
 				return
