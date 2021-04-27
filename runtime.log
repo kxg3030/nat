@@ -159,3 +159,22 @@
 2021/04/27 15:17:44 new connect：127.0.0.1:53213 nodes：0
 2021/04/27 15:17:44 connect server success
 2021/04/27 15:17:44 client closed：EOF
+2021/04/27 15:26:32 server4Net start success
+2021/04/27 15:26:39 new connect：127.0.0.1:53340 nodes：0
+2021/04/27 15:26:39 connect server success
+2021/04/27 15:26:39 client closed：EOF
+2021/04/27 15:28:37 server4Net start success
+2021/04/27 15:29:12 server4Net start success
+2021/04/27 15:29:14 new connect：127.0.0.1:53349 nodes：0
+2021/04/27 15:29:14 connect server success
+2021/04/27 15:29:14 client closed：EOF
+2021/04/27 15:32:04 server4Net start success
+2021/04/27 15:32:06 new connect：127.0.0.1:53359 nodes：0
+2021/04/27 15:32:06 connect server success
+2021/04/27 15:32:06 client closed：EOF
+2021/04/27 15:32:09 new connect：127.0.0.1:53360 nodes：0
+2021/04/27 15:32:09 connect server success
+2021/04/27 15:32:09 client closed：EOF
+2021/04/27 15:32:10 new connect：127.0.0.1:53361 nodes：0
+2021/04/27 15:32:10 connect server success
+2021/04/27 15:32:10 client closed：EOF

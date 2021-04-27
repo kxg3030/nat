@@ -2,11 +2,9 @@ package Util
 
 import (
 	"encoding/binary"
-	"fmt"
 	"io"
 	"nat/Logger"
 	"net"
-	"strconv"
 	"time"
 )
 
@@ -61,7 +59,6 @@ func (r *Reader) readOneMessage() {
 	headerData := r.Buff[r.Start : r.HeaderLen+r.Start]
 	// 读取包头中包体长度
 	bodyLength := binary.BigEndian.Uint32(headerData[r.BodyOffset : r.BodyOffset+4])
-	fmt.Println("包长：" + strconv.Itoa(int(bodyLength)))
 	// 判断包体的长度
 	if r.End-r.Start-r.HeaderLen < int(bodyLength) {
 		// 包体不足

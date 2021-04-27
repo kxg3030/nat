@@ -1,6 +1,7 @@
 package Server
 
 import (
+	"encoding/json"
 	"fmt"
 	"nat/Constant"
 	"nat/Logger"
@@ -116,9 +117,23 @@ func (s *Server) handleNode(node *Node) {
 
 func (n *Node) service(data []byte) {
 	action := data[0]
+	body := data[HeaderLength:]
+	var bodyMap map[string]interface{}
+	if len(body) > 0 {
+		err := json.Unmarshal(body, &bodyMap)
+		if err != nil {
+			Logger.Logger.Println("json unmarshal error：" + err.Error())
+			return
+		}
+	}
 	switch action {
 	case Constant.Login:
-		fmt.Println("登录")
+		// 验证登录
+		username := bodyMap["username"].(string)
+		password := bodyMap["password"].(string)
+		fmt.Println(username, password)
 		_, _ = n.connector.Write([]byte("login success"))
+	case Constant.NodeList:
+		_, _ = n.connector.Write([]byte("select success"))
 	}
 }
