@@ -1,0 +1,27 @@
+2021/04/27 14:05:22 server4Net start success
+2021/04/27 14:11:08 server4Net start success
+2021/04/27 14:11:09 new connect：127.0.0.1:52602
+2021/04/27 14:11:09 connect server success
+2021/04/27 14:11:45 server4Net start success
+2021/04/27 14:11:50 new connect：127.0.0.1:52605
+2021/04/27 14:11:50 connect server success
+2021/04/27 14:11:53 read data error：read tcp 127.0.0.1:9501->127.0.0.1:52605: wsarecv: An existing connection was forcibly closed by the remote host.
+2021/04/27 14:13:09 server4Net start success
+2021/04/27 14:13:11 new connect：127.0.0.1:52611
+2021/04/27 14:13:11 connect server success
+2021/04/27 14:13:14 read data error：read tcp 127.0.0.1:9501->127.0.0.1:52611: wsarecv: An existing connection was forcibly closed by the remote host.
+2021/04/27 14:13:27 server4Net start success
+2021/04/27 14:13:29 new connect：127.0.0.1:52612
+2021/04/27 14:13:28 connect server success
+2021/04/27 14:13:30 read data error：read tcp 127.0.0.1:9501->127.0.0.1:52612: wsarecv: An existing connection was forcibly closed by the remote host.
+2021/04/27 14:16:55 server4Net start success
+2021/04/27 14:16:57 new connect：127.0.0.1:52628 nodes：0
+2021/04/27 14:16:57 connect server success
+2021/04/27 14:17:00 read data error：read tcp 127.0.0.1:9501->127.0.0.1:52628: wsarecv: An existing connection was forcibly closed by the remote host.
+2021/04/27 14:17:09 new connect：127.0.0.1:52631 nodes：0
+2021/04/27 14:17:09 connect server success
+2021/04/27 14:17:11 read data error：read tcp 127.0.0.1:9501->127.0.0.1:52631: wsarecv: An existing connection was forcibly closed by the remote host.
+2021/04/27 14:29:31 server4Net start success
+2021/04/27 14:29:33 new connect：127.0.0.1:52750 nodes：0
+2021/04/27 14:29:33 connect server success
+2021/04/27 14:29:35 read data error：read tcp 127.0.0.1:9501->127.0.0.1:52750: wsarecv: An existing connection was forcibly closed by the remote host.
