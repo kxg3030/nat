@@ -20,7 +20,7 @@ const BodyLength = 4
 // 包头长度
 const HeaderLength = ReqLength + BodyLength
 
-// 包头标识包体长度的起始位置
+// 包头标识包体长度的起始位置(包头中的第一个字节是请求标识，则包长的索引从1开始)
 const BodyOffset = 1
 
 const Server4Net = "127.0.0.1:9502"
